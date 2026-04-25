@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BilliardPro POS - System Initialization</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#000000",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#565e74",
+                        "on-error": "#ffffff",
+                        "outline": "#76777d",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#d8e2ff",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "secondary-fixed": "#6ffbbe",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#3980f4",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary": "#000000",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-container": "#001a42",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#d3e4fe",
+                        "secondary": "#006c49",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "on-tertiary-fixed": "#001a42",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-primary": "#bec6e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "2xl": "64px",
+                        "xl": "40px",
+                        "margin": "32px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "h1": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "code": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "code": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .geometric-bg {
+            background-color: #f8f9ff;
+            background-image: radial-gradient(#dce9ff 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .progress-glow {
+            box-shadow: 0 0 12px rgba(0, 108, 73, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col items-center justify-center geometric-bg overflow-hidden">
+<!-- Brand Identity Header -->
+<header class="mb-xl flex flex-col items-center">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-secondary text-[48px]" style="font-variation-settings: 'FILL' 1;">sports_handball</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-background tracking-tighter">BilliardPro</h1>
+<p class="font-label-caps text-label-caps text-on-primary-container tracking-widest uppercase">Management Suite v4.2</p>
+</header>
+<!-- Main Loading Interface -->
+<main class="w-full max-w-[520px] px-lg">
+<div class="bg-surface-container-lowest border border-outline-variant p-xl rounded-xl shadow-sm">
+<!-- Initialization Steps -->
+<div class="space-y-md mb-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Establishing Secure Connection</span>
+</div>
+<span class="font-code text-code text-on-secondary-container bg-secondary-container/20 px-sm rounded">SUCCESS</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-on-surface">Verifying Terminal BP-772</span>
+</div>
+<span class="font-code text-code text-on-secondary-container bg-secondary-container/20 px-sm rounded">SUCCESS</span>
+</div>
+<div class="flex items-center justify-between opacity-100">
+<div class="flex items-center gap-md">
+<div class="w-5 h-5 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary animate-spin text-[20px]">sync</span>
+</div>
+<span class="font-body-md text-on-surface font-semibold">Fetching Cloud Database</span>
+</div>
+<span class="font-code text-code text-secondary">SYNCING</span>
+</div>
+<div class="flex items-center justify-between opacity-40">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline text-[20px]">circle</span>
+<span class="font-body-md text-on-surface">Allocating Local Cache</span>
+</div>
+<span class="font-code text-code text-outline">PENDING</span>
+</div>
+</div>
+<!-- Progress Bar Section -->
+<div class="space-y-sm">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-label-caps text-label-caps text-on-primary-container">SYSTEM INITIALIZATION</span>
+<span class="font-h3 text-h3 text-secondary">74%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[74%] progress-glow rounded-full transition-all duration-1000"></div>
+</div>
+<p class="font-body-sm text-on-surface-variant text-center mt-md">Please do not disconnect power or terminate the application process.</p>
+</div>
+</div>
+<!-- System Details / Terminal Footer -->
+<div class="mt-xl flex flex-col items-center gap-md">
+<div class="flex items-center gap-xs bg-on-background text-surface-bright px-md py-xs rounded-full border border-outline">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-caps text-[10px] tracking-widest">SECURE ENVIRONMENT ACTIVE</span>
+</div>
+<div class="grid grid-cols-3 gap-xl w-full text-center border-t border-outline-variant/30 pt-lg">
+<div class="space-y-xs">
+<p class="font-label-caps text-label-caps text-on-primary-container">OS ARCH</p>
+<p class="font-code text-code text-on-surface">X64_STABLE</p>
+</div>
+<div class="space-y-xs">
+<p class="font-label-caps text-label-caps text-on-primary-container">ENCRYPTION</p>
+<p class="font-code text-code text-on-surface">AES-256-GCM</p>
+</div>
+<div class="space-y-xs">
+<p class="font-label-caps text-label-caps text-on-primary-container">LATENCY</p>
+<p class="font-code text-code text-on-surface">14ms</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Decorative Bottom Canvas -->
+<div class="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-30"></div>
+<!-- Hidden Map/Image Data placeholders as per instructions -->
+<div class="hidden">
+<img data-alt="professional modern technology background with subtle geometric nodes and lines in soft emerald and slate blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5SsVGXAC2uVemB-nY0Dhe1xdB5jDrJL8M6M6G7lqPpebjQj3Tu39G3dDBZEcHAn0Pc7_IATFwIvRoe7FBjlgEzli9S4LR-DcfXBVtYFOSlnJZ-Hnz45NBVm7rLn_xjduMK8yCkaTrGwjZcrvCmNmjwQ3x3j4nmzne_6M376PkwNHfVMEbjlFoq2gW3O1tx6qmTmCy67kaPC1A-lSQgkdp7ke8wRmv9UUCFu6EEcIq1MeGlKQR4dZqH1oH9xZExX9LcfmCto1lDGHL"/>
+<img data-alt="close up of a high performance computer server rack with blinking green status lights in a clean data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVun5zTBIcnd4EDMTUxhKW37lkFfV4d3e-6XIsRab0en96iGc69KNbIqlv5kUWG7M9_Q8XIUjqeOvoTzLkv1luVLgSlwcL81tkMAJYOe9xvvnwokDbynGqtkzfuOGmKPiqDsPqwG8KxK2eG5E-24m9SiixyBnwLyRrm5s3oAznuG9RjdJCghYkFVGNMQ4h3WwuvZ9EiiHJ_BNUSe-bn_xaQv472zrv7uRFWD1BNjxA6J2pNG5MO7I_z3PINAAQ-Nf2BfQd859Isj06"/>
+</div>
+</body></html>
